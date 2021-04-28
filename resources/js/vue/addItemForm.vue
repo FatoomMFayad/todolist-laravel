@@ -1,7 +1,7 @@
 <template>
     <div class="addItem">
         <input type="text"/>
-        <button></button>
+        <font-awesome-icon icon="plus-square"/>
     </div>
 </template>
 
