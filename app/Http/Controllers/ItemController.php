@@ -73,7 +73,16 @@ class ItemController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $existingItem = Item::find($id);
+        if ($existingItem) {
+            $existingItem->completed = $request->item['completed'] ? true : false;
+            $existingItem->completed_at = $request->item['completed'] ? now() : null;
+            $existingItem->save();
+
+            return $existingItem;
+        }
+
+        return "Item not found.";
     }
 
     /**
