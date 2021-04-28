@@ -1,6 +1,7 @@
 <template>
-    <div>
-        Form
+    <div class="addItem">
+        <input type="text"/>
+        <button></button>
     </div>
 </template>
 
