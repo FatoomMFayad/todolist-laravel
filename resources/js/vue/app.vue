@@ -22,7 +22,7 @@ export default {
     },
     methods:{
       getList() {
-          axois.get('api/items')
+          axios.get('api/items')
           .then( response => {
               this.items = response.data
           })
