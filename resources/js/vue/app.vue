@@ -4,7 +4,7 @@
             <h2 id="title">Todo List</h2>
             <add-item-form/>
         </div>
-        <list-view/>
+        <list-view :items="items"/>
     </div>
 </template>
 <script>
@@ -14,6 +14,25 @@ export default {
     components: {
         AddItemForm,
         ListView
+    },
+    data: function(){
+        return{
+            items: []
+        }
+    },
+    methods:{
+      getList() {
+          axois.get('api/items')
+          .then( response => {
+              this.items = response.data
+          })
+          .catch( error => {
+              console.log(error);
+          })
+      }
+    },
+    created(){
+        this.getList();
     }
 }
 </script>
