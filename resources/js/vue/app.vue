@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style scooped>
+<style scoped>
     .todoListContainer {
         width: 350px;
         margin: auto;
